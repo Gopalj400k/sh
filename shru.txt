@@ -1,0 +1,484 @@
+1A. console app to obtain integer value from the user and display the product
+
+using System;
+namespace MyApplication
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter 4 integer values:");
+
+            Console.Write("Value 1: ");
+            int value1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Value 2: ");
+            int value2 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Value 3: ");
+            int value3 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Value 4: ");
+            int value4 = Convert.ToInt32(Console.ReadLine());
+
+            // Optionally, print the entered values
+            Console.WriteLine($"You entered: {value1}, {value2}, {value3}, {value4}");
+        }
+    }
+}
+1B.2 integers Boolean check
+using System;
+
+namespace CheckNumber
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter the first number: ");
+            string var1 = Console.ReadLine();
+            int number1 = int.Parse(var1);
+
+            Console.Write("Enter the second number: ");
+            string var2 = Console.ReadLine();
+            int number2 = int.Parse(var2);
+
+            bool isFirstNumberLessThanToTen = number1 < 10;
+            Console.WriteLine($"The first number {number1} is less than 10: {isFirstNumberLessThanToTen}");
+
+            bool isSecondNumberLessThanToTen = number2 < 10;
+            Console.WriteLine($"The second number {number2} is less than 10: {isSecondNumberLessThanToTen}");
+        }
+    }
+}
+2A. conditional statement
+using System;
+
+namespace MyApplication
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            if (20 > 18)
+            {
+                Console.WriteLine("20 is greater than 18");
+            }
+        }
+    }
+}
+2B.if-else statement
+using System;
+
+namespace MyApplication
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int time = 20;
+            if (time < 18)
+            {
+                Console.WriteLine("Good day.");
+            }
+            else
+            {
+                Console.WriteLine("Good evening.");
+            }
+        }
+    }
+}
+2C.nested if
+using System;
+
+namespace NestedIfExample
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int age = 19;
+            bool isStudent = true;
+
+            if (age >= 18)
+            {
+                Console.WriteLine("You are an adult.");
+
+                if (isStudent)
+                {
+                    Console.WriteLine("You are also a student.");
+                }
+                else
+                {
+                    Console.WriteLine("You are not a student.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("You are not yet an adult.");
+            }
+        }
+    }
+}
+2D.else-if ladder statement
+using System;
+
+namespace MyApplication
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int time = 22;
+            if (time < 10)
+            {
+                Console.WriteLine("Good morning.");
+            }
+            else if (time < 20)
+            {
+                Console.WriteLine("Good day.");
+            }
+            else
+            {
+                Console.WriteLine("Good evening.");
+            }
+        }
+    }
+}
+2E.Switch case statement
+using System;
+
+namespace SwitchCaseExample
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int option = 2;
+
+            switch (option)
+            {
+                case 1:
+                    Console.WriteLine("Option 1 selected");
+                    break;
+                case 2:
+                    Console.WriteLine("Option 2 selected");
+                    break;
+                case 3:
+                    Console.WriteLine("Option 3 selected");
+                    break;
+                case 4:
+                    Console.WriteLine("Invalid option selected");
+                    break;
+            }
+        }
+    }
+}
+3.jump statement
+3A.goto statement
+using System;
+namespace GotoExample
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int count = 0;
+        start:
+            Console.WriteLine(count);
+            count++;
+
+            if (count < 5)
+                goto start;
+            Console.WriteLine("Loop ended.");
+        }
+    }
+}
+3B.continue statement
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("ADITYA MAURYA | 38028");
+
+        for (int i = 1; i <= 5; i++)
+        {
+            if (i == 2)
+                continue;
+            Console.WriteLine(i);
+        }
+    }
+}
+3C.break statement
+using System;
+class Program
+{
+    static void Main()
+    {
+        for (int i = 1; i <= 5; i++)
+        {
+            Console.WriteLine(i);
+
+            if (i == 3)
+                break;
+        }
+        Console.WriteLine("Loop ended.");
+    }
+}
+4.Loops
+4A.for loop
+using System;
+namespace Forloop
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            for (int i = 1; i <= 5; i++)
+            {
+                Console.WriteLine(i);
+            }
+        }
+    }
+}
+4B.While loop
+using System;
+
+namespace WhileLoop
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int i = 1;
+            while (i <= 5)
+            {
+                Console.WriteLine(+i);
+                i++;
+            }
+        }
+    }
+}
+4C.Do-wile loop
+using System;
+namespace DoWhileLoop
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int i = 1;
+            do
+            {
+                Console.WriteLine(+i);
+                i++;
+            } while (i <= 5);
+        }
+    }
+}
+5.prime no. checker, fibonacci series and reverse and sum of the numbers
+5A.prime no.
+using System;
+
+class PrimeNumberChecker
+{
+    static void Main(string[] args)
+    {
+        Console.Write("Enter a number: ");
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        bool isPrime = IsPrime(number);
+
+        if (isPrime)
+        {
+            Console.WriteLine(number + " is a prime number.");
+        }
+        else
+        {
+            Console.WriteLine(number + " is not a prime number.");
+        }
+
+        Console.ReadLine();
+    }
+
+    static bool IsPrime(int number)
+    {
+        if (number <= 1) return false;
+        if (number == 2) return true;
+        if (number % 2 == 0) return false;
+
+        var boundary = (int)Math.Floor(Math.Sqrt(number));
+
+        for (int i = 3; i <= boundary; i += 2)
+        {
+            if (number % i == 0) return false;
+        }
+
+        return true;
+    }
+}
+5B.fibonacci series
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter the number of terms in Fibonacci series: ");
+        int count = Convert.ToInt32(Console.ReadLine());
+
+        int a = 0, b = 1, c;
+
+        Console.WriteLine("\nFibonacci Series:");
+
+        for (int i = 0; i < count; i++)
+        {
+            Console.Write(a + " ");
+
+            c = a + b;
+            a = b;
+            b = c;
+        }
+
+        Console.ReadLine();
+    }
+}
+5C.reverse a number and sum of it
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        int reversedNumber = ReverseNumber(number);
+        int sumOfDigits = SumOfDigits(reversedNumber);
+
+        Console.WriteLine("Reversed number: " + reversedNumber);
+        Console.WriteLine("Sum of digits of reversed number: " + sumOfDigits);
+
+        Console.ReadLine();
+    }
+
+    // Function to reverse a number
+    static int ReverseNumber(int number)
+    {
+        int reversed = 0;
+        while (number != 0)
+        {
+            int digit = number % 10;
+            reversed = reversed * 10 + digit;
+            number = number / 10;
+        }
+        return reversed;
+    }
+    static int SumOfDigits(int number)
+    {
+        int sum = 0;
+        while (number != 0)
+        {
+            int digit = number % 10;
+            sum = sum + digit;
+            number = number / 10;
+        }
+        return sum;
+    }
+}
+7.program using css
+7A.inline css
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Inline CSS Example</title>
+</head>
+<body style="background-color:grey;">
+    <form id="form1" runat="server">
+        <div style="width:80%; margin:0 auto;">
+            <h1 style="color:aqua;">Welcome to My Page</h1>
+            <p style="font-family:Arial, sans-serif; background-color:yellow;">
+                This is a paragraph styled with inline CSS
+            </p>
+        </div>
+    </form>
+</body>
+</html>
+7B.internal css
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inline CSS Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: yellow;
+            color: blue;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <h1>Welcome to My Page</h1>
+            <p>This is a paragraph styled with CSS.</p>
+        </div>
+    </form>
+</body>
+</html>
+7.C external css
+default.aspx
+<!DOCTYPE html>
+<html>
+<head>
+    <title>External CSS Example</title>
+    <link href="StyleSheet1.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <h1>Welcome to My Page</h1>
+            <p>This is a paragraph styled with external CSS.</p>
+        </div>
+    </form>
+</body>
+</html>
+
+Here's a refined version of the HTML and CSS files without any unrelated lines, comments, or extra content.
+
+default.aspx
+html
+Copy code
+<!DOCTYPE html>
+<html>
+<head>
+    <title>External CSS Example</title>
+    <link href="StyleSheet1.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <h1>Welcome to My Page</h1>
+            <p>This is a paragraph styled with external CSS.</p>
+        </div>
+    </form>
+</body>
+</html>
+StyleSheet1.css
+body {
+    font-family: Arial, sans-serif;
+    background-color: green;
+    color: white;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
